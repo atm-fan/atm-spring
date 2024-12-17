@@ -10,12 +10,14 @@ import lombok.ToString;
 @ToString
 public class UserService {
 
-    private String name;
+    private String uid;
 
-    public UserService(String name){
-        this.name = name;
-    }
+    private UserDao userDao;
+
+//    public UserService(String name){
+//        this.name = name;
+//    }
     public void queryUserInfo(){
-        System.out.println("查询用户信息");
+        System.out.println("查询用户信息："+userDao.queryUserName(uid));
     }
 }
