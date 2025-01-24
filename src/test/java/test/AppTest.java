@@ -1,7 +1,8 @@
-package cn.atm;
+package test;
 
-import cn.atm.beans.UserDao;
-import cn.atm.beans.UserService;
+import cn.atm.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import test.cn.atm.beans.UserDao;
+import test.cn.atm.beans.UserService;
 import cn.atm.springframework.beans.PropertyValue;
 import cn.atm.springframework.beans.PropertyValues;
 import cn.atm.springframework.beans.factory.config.BeanDefinition;
@@ -77,6 +78,19 @@ public class AppTest {
         UserService userService = (UserService)beanFactory.getBean("userService");
 
         userService.queryUserInfo();
+    }
+
+    @Test
+    public void test_xml(){
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("classpath:spring.xml");
+
+        UserService userService = (UserService) beanFactory.getBean("userService");
+
+        userService.queryUserInfo();
+
     }
 
 }

@@ -1,6 +1,5 @@
-package cn.atm.beans;
+package test.cn.atm.beans;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class UserService {
 
-    private String uid;
+    private String uId;
 
     private UserDao userDao;
 
@@ -18,6 +17,6 @@ public class UserService {
 //        this.name = name;
 //    }
     public void queryUserInfo(){
-        System.out.println("查询用户信息："+userDao.queryUserName(uid));
+        System.out.println("查询用户信息："+userDao.queryUserName(uId));
     }
 }

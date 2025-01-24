@@ -1,4 +1,4 @@
-package cn.atm.beans;
+package test.cn.atm.beans;
 
 import java.util.HashMap;
 import java.util.Map;
